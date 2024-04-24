@@ -16,3 +16,4 @@ I created a logic behind the game. Like settting up the board, showing possible 
 1. Majority of the Board.java (except last function named "zwyciezca").
 2. Initiated ChessboardController.java to make it able to control game (only that). Elements of database (name of players, ranking), surrender/draw buttons and timer were appended later by my friends.
 3. Every class for each figure (Rook, Queen, Pawn etc.).
+4. Square class
