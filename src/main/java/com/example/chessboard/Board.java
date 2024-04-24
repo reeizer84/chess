@@ -39,7 +39,7 @@ public class Board {
 
     public Board (ChessboardController controller){
         CheckmateDetector detector = new CheckmateDetector();
-        //bieremy z controllera gridPane
+        //bierzemy z controllera gridPane
         Pane[][] gridPaneArray = controller.gridPaneArray;
 
         Timeline Timer1 = controller.timer11;
@@ -90,7 +90,6 @@ public class Board {
         squares [7][6].setSquare (gridPaneArray [7][6], new Knight(),7,6,false);
         squares [7][7].setSquare (gridPaneArray [7][7], new Rook(),7,7,false);
 
-        //do podswietlania:)
         Light.Distant light = new Light.Distant();
         light.setAzimuth(-45.0);
 
@@ -104,8 +103,6 @@ public class Board {
             removeEffects();
 
             //po kliknieciu na kafelek, sprawdza jakie id ma Pane (kafelek)\
-
-
             String id = ((Pane)mouseEvent.getSource()).getId();
             //przerabia id
             String[] parts = id.split (" ");
@@ -120,7 +117,7 @@ public class Board {
 
             boolean moved = false;
             if (during_click && !during_check){
-                //jak ktos juz podswietlil, to teraz lecimy ruch
+                //jak ktos juz podswietlil, to teraz wykonujemy ruch
                 moved = last_clicked.move (last_possible, squares [int_row][int_column]);
             }
             else if (during_check && during_click){
@@ -176,7 +173,7 @@ public class Board {
 
 
             if (squares [int_row][int_column].isOccupied && !moved ) {
-                //podswietlenie:)
+
                 if (during_check){
                     ArrayList<Square> squares1 = getCurrentKingSquare(this);
                     if (white_check) last_possible = detector.getSafeSquares(this, squares1.get(1), whitesTurn);
@@ -186,8 +183,8 @@ public class Board {
                     last_possible = squares[int_row][int_column].piece.getMoves(this, squares[int_row][int_column]);
                 }
                 for (Square square : last_possible) square.pane.setEffect(lighting);
-//zmmianaaaa
-                //mozna nakurwiac ruch po during_click
+                //zmmianaaaa
+                //mozna wykonac ruch po during_click
                 if (whitesTurn == squares[int_row][int_column].isBlack) {
                     during_click = true;
                     last_clicked = squares[int_row][int_column];
@@ -197,7 +194,7 @@ public class Board {
 
         for (int i = 0; i < 8; i++){
             for (int j = 0; j < 8; j++){
-                //za pierwszym uruchomieniem dodaje id dla kazdego kafla i daje mu agenta;) (setOnMouseClicked)
+                //za pierwszym uruchomieniem dodaje id dla kazdego kafla i daje mu agenta (setOnMouseClicked)
                 //agent nasluchuje
                 String s = i + " " + j;
                 gridPaneArray [i][j].setId (s);
@@ -213,7 +210,7 @@ public class Board {
     }
 
     public ArrayList<Square> getCurrentKingSquare(Board board) {
-        //index 0 to czarny krol, index 1 to bialy krol;
+        //index 0 to czarny krol, index 1 to bialy krol
         ArrayList<Square> Kings_Square = new ArrayList<>();
 
         for (int row = 0; row < 8; row++) {

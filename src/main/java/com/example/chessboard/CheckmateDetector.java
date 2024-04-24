@@ -6,18 +6,17 @@ public class CheckmateDetector {
 
     public Square matting_square;
     public static boolean isCheckmate(Board board, boolean isBlackTurn, Square kingSquare) {
-        // Check if the king is in check
         if (!isKingInCheck(board, kingSquare, isBlackTurn)) {
-            return false; // King is not in check, so it's not checkmate
+            return false;
         }
         Arduino arduino = new Arduino();
         arduino.sendSignalToArduino(1);
 
-        // Check if the king can escape check by moving to a safe square
+        // Sprawdza czy krol moze uciec
         ArrayList<Square> safeSquares = getSafeSquares(board, kingSquare, isBlackTurn);
         if (!safeSquares.isEmpty()) {
 
-            return false; // King can move to a safe square, so it's not checkmate
+            return false;
         }
         else{
 
@@ -53,7 +52,7 @@ public class CheckmateDetector {
 
     public static boolean isKingInCheck(Board board, Square kingSquare, boolean isBlackTurn) {
         ArrayList<Square> opponentMoves = new ArrayList<>();
-        // Collect all opponent's possible moves
+        // zbierz wszystkie ruchy przeciwnika
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 Square square = board.squares[row][col];
@@ -64,7 +63,7 @@ public class CheckmateDetector {
             }
         }
 
-        // Check if any opponent's move can capture the king
+        // sprawdz czy ktoras figura moze zbic krola
         for (Square move : opponentMoves) {
             if (move == kingSquare) {
                 return true;
@@ -79,16 +78,16 @@ public class CheckmateDetector {
         ArrayList<Square> kingMoves = kingSquare.piece.getMoves(board, kingSquare);
 
         for (Square move : kingMoves) {
-            // Simulate the king's move and check if it's still in check
+            // zasymyluj ruch krola i sprawdz czy bedzie w checku
             Piece movedPiece = move.piece;
             move.piece = kingSquare.piece;
 
             if (!isKingInCheck(board, move, isBlackTurn)) {
-                // King can move to the square without being in check
+                // krol moze poruszyl sie na bezpieczne pole bez bycia w checku
                 safeSquares.add(move);
             }
 
-            // Undo the move
+            // cofnij ruch
             move.piece = movedPiece;
         }
 
@@ -97,7 +96,6 @@ public class CheckmateDetector {
 
     private static Square KingAttackers(Board board, Square kingSquare, boolean isBlackTurn) {
         ArrayList<CheckingPieces> opponentMoves = new ArrayList<>();
-        // Collect all opponent's possible moves
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 Square square = board.squares[row][col];
@@ -113,7 +111,6 @@ public class CheckmateDetector {
             }
         }
 
-        // Check if any opponent's move can capture the king
         for (CheckingPieces move : opponentMoves) {
             for(Square move2 : move.lista) {
                 if (move2 == kingSquare) {
@@ -133,18 +130,18 @@ public class CheckmateDetector {
         int attackingRow = attackingSquare.row;
         int attackingCol = attackingSquare.column;
 
-        // Calculate the row and column differences between the king and attacking piece
+        // oblicz roznice kolumn i wierszy miedzy pozycja krola, a figura przeciwnika
         int rowDiff = attackingRow - kingRow;
         int colDiff = attackingCol - kingCol;
 
-        // Determine the direction of movement for each row and column
+        // ustal kierunek ruchu dla kazdej kolumny i wiersza
         int rowDirection = Integer.signum(rowDiff);
         int colDirection = Integer.signum(colDiff);
 
-        // Calculate the number of steps needed to reach the attacking piece
+        // oblicz liczbe ruchow potrzebna aby dosiegnac figure
         int steps = Math.max(Math.abs(rowDiff), Math.abs(colDiff)) - 1;
 
-        // Traverse the squares in between the king and attacking piece
+        // przejdz polami miedzy krolem, a figura atakujaca
         for (int i = 1; i <= steps; i++) {
             int row = kingRow + i * rowDirection;
             int col = kingCol + i * colDirection;

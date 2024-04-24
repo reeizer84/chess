@@ -31,7 +31,7 @@ public class Square {
 
     public void setBackground (){
         String path = null;
-        //madre to nizej, sprawdza jaka klasa dziedziczaca po Piece to jest, ktora figura
+        //sprawdza jaka klasa dziedziczaca po Piece to jest, ktora figura
         if (piece instanceof Bishop){
             if (isBlack) path = String.valueOf(getClass().getResource("bishop_b.png"));
             else path = String.valueOf(getClass().getResource("bishop_w.png"));
@@ -65,7 +65,7 @@ public class Square {
             pane.getChildren().add(background);
         }
     }
-    //duzo uzywam w trakcie ruchow, bic itp:)
+
     public void setSquare (Pane pane_in, Piece piece_in, int row_in, int column_in, boolean isBlack_in){
         pane = pane_in;
         piece = piece_in;
@@ -75,7 +75,7 @@ public class Square {
         isOccupied = true;
         this.setBackground();
     }
-    //to tez jak figura sie rusza z pole i pole jest puste
+
     public void resetSquare (){
         isOccupied = false;
         pane.getChildren().remove (this.background);
@@ -83,7 +83,7 @@ public class Square {
         piece = null;
         isBlack = false;
     }
-    //na razie bez uzytku, ale Kacper bedzie mogl uzyc do ew. zapisywania ruchow w bazie
+    //na razie bez uzytku, ale mozna uzyc do ew. zapisywania ruchow w bazie
     public String translateToLetters (){
         String columnToLetters = "";
 

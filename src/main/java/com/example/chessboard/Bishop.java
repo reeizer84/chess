@@ -30,7 +30,6 @@ public class Bishop extends Piece{
         int column = square.column + dx;
 
         Square square2;
-        //zeby nie wyjebalo
         while ((row < 8 && row >= 0) && (column < 8 && column >= 0)){
             //w kazdej iteracji wybieramy nastepny kwadrat po przekatnej
             square2 = board.squares[row][column];

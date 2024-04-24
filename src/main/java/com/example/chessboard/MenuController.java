@@ -194,11 +194,11 @@ public static int  colorValue=0; // bialy = 0, czarny = 1
         VBox layout = new VBox(10);
 
         for (Historia h : historia){
-            String ciul = "Id gry: "+ h.id+"   Gracz Biały: "+h.gracz_bialy+"   Gracz Czarny: "+ h.gracz_czarny+ "   Zwycięzca: "+h.zwyciezca+"   Wynik: "+ h.wynik;
+            String gra = "Id gry: "+ h.id+"   Gracz Biały: "+h.gracz_bialy+"   Gracz Czarny: "+ h.gracz_czarny+ "   Zwycięzca: "+h.zwyciezca+"   Wynik: "+ h.wynik;
 
-            Label chuj = new Label(ciul);
+            Label label = new Label(gra);
 
-            layout.getChildren().addAll(chuj);
+            layout.getChildren().addAll(label);
         }
         Button closeButton2 = new Button("Zamknij");
         Platform.setImplicitExit(false);
