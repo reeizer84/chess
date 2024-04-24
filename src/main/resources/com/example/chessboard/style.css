@@ -1,0 +1,53 @@
+#startButton {
+    -fx-background-color: #c3c4c4,
+    linear-gradient(#d6d6d6 50%, white 100%),
+    radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgb(194, 178, 178) 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0, 1, 1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 3, 0.0, 0, 1);
+    -fx-font-size: 40px;
+    -fx-font-family: Cambria;
+}
+
+.DefaultButton{
+    -fx-background-color: #c3c4c4,
+    linear-gradient(#d6d6d6 50%, white 100%),
+    radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230, 230, 230, 0) 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0, 1, 1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 3, 0.0, 0, 1);
+    -fx-font-family: Cambria;
+}
+
+.DefaultButton:hover{
+    -fx-background-color:  #c3c4d5;
+    -fx-cursor: hand;
+}
+
+#startButton:hover {
+    -fx-background-color:  #c3c4d5;
+    -fx-cursor: hand;
+}
+
+#timechoice{
+    -fx-font-size: 30px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+#colorchoice{
+    -fx-font-size: 30px;
+    -fx-text-alignment: center;
+}
+
+#chessboard {
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+}
+
+Label{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 3, 0.0, 0, 1);
+    -fx-font-family: Cambria;
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.MenuController">
+   <children>
+      <ImageView fitHeight="785.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@tlo.jpeg" />
+         </image>
+      </ImageView>
+      <Button fx:id="startButton" alignment="CENTER" layoutX="470.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleStartButtonClick" prefHeight="59.0" prefWidth="340.0" text="START">
+         <font>
+            <Font name="Cambria" />
+         </font></Button>
+      <Button  onAction="#historia1" layoutX="14.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="HISTORIA GIER">
+         <font>
+            <Font name="Constantia" size="12.0" />
+         </font></Button>
+      <ChoiceBox fx:id="timechoice" id="timechoice" layoutX="470.0" layoutY="217.0" prefHeight="59.0" prefWidth="340.0" styleClass="DefaultButton" onAction="#ustawCzas" value="10 minut">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="1 minuta" fx:id="1m"/>
+               <String fx:value="3 minuty" fx:id="3m"/>
+               <String fx:value="5 minut" fx:id="5m"/>
+               <String fx:value="10 minut" fx:id="10m"/>
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <ChoiceBox id="colorchoice" fx:id="colorChoiceBox" layoutX="470.0" layoutY="339.0" prefHeight="59.0" prefWidth="340.0" styleClass="DefaultButton" onAction="#ustawKolor">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="BIAŁE" fx:id="whiteOption" />
+               <String fx:value="CZARNE" fx:id="blackOption" />
+               <String fx:value="LOSOWO" fx:id="randomOption" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Button  onAction="#historia2" layoutX="1137.0" layoutY="289.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="HISTORIA GIER">
+         <font>
+            <Font name="Cambria" size="12.0" />
+         </font></Button>
+      <TextField fx:id="login2" layoutX="1137.0" layoutY="105.0" promptText="LOGIN" />
+      <TextField fx:id="login1" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="149.0" promptText="LOGIN" />
+      <Button fx:id="zaloguj1" layoutX="14.0" layoutY="217.0" mnemonicParsing="false" onAction="#zalogujUzytkownik1" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="ZALOGUJ" />
+      <Button fx:id="zaloguj2" layoutX="1137.0" layoutY="217.0" mnemonicParsing="false" onAction="#zalogujUzytkownik2" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="ZALOGUJ" />
+      <Button fx:id="zarejestruj" layoutX="576.0" layoutY="631.0" mnemonicParsing="false" onAction="#rejestracja" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="UTWÓRZ KONTO" />
+      <PasswordField fx:id="haslo1" layoutX="14.0" layoutY="167.0" promptText="HASŁO" />
+      <PasswordField fx:id="haslo2" layoutX="1137.0" layoutY="167.0" promptText="HASŁO" />
+      <PasswordField fx:id="haslo3" layoutX="576.0" layoutY="585.0" promptText="HASŁO" />
+      <TextField fx:id="login3" layoutX="576.0" layoutY="541.0" promptText="LOGIN" />
+      <TextField fx:id="pseudonim" layoutX="576.0" layoutY="497.0" promptText="NAZWA" />
+      <Label layoutX="14.0" layoutY="25.0" prefHeight="17.0" prefWidth="149.0" text="Zalogowany" textFill="WHITE" />
+      <Label fx:id="zalogowany1_" layoutX="14.0" layoutY="54.0" prefHeight="17.0" prefWidth="149.0" text="" textFill="WHITE" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="1137.0" layoutY="25.0" prefHeight="17.0" prefWidth="149.0" text="Zalogowany" textFill="WHITE" />
+      <Label fx:id="zalogowany2_" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="1137.0" layoutY="54.0" prefHeight="17.0" prefWidth="149.0" text="" textFill="WHITE" />
+      <Button fx:id="wyloguj1" onAction="#wyloguj1" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="WYLOGUJ">
+         <font>
+            <Font name="Constantia" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="wyloguj2" onAction="#wyloguj2" layoutX="1137.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="DefaultButton" text="WYLOGUJ">
+         <font>
+            <Font name="Constantia" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

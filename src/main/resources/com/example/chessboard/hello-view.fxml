@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="750.0" maxWidth="1300.0" minHeight="750.0" minWidth="1300.0" prefHeight="750.0" prefWidth="1300.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.ChessboardController">
+   <top>
+      <HBox maxHeight="788.0" maxWidth="1300.0" minHeight="750.0" minWidth="295.0" prefHeight="750.0" prefWidth="1270.0" BorderPane.alignment="CENTER">
+         <children>
+      
+               <GridPane fx:id="chessboard" alignment="CENTER" maxHeight="617.0" maxWidth="617.0" minHeight="617.0" minWidth="617.0" prefHeight="617.0" prefWidth="617.0" styleClass="szachownicaGrid">
+                   <columnConstraints>
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                       <ColumnConstraints prefWidth="90.0" />
+                   </columnConstraints>
+                   <rowConstraints>
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+                       <RowConstraints prefHeight="90.0" />
+
+                   </rowConstraints>
+               </GridPane>
+            <VBox prefHeight="750.0" prefWidth="683.0">
+               <children>
+                  <TextField prefHeight="81.0" prefWidth="477.0" text="TIMER" />
+                  <TextField prefHeight="78.0" prefWidth="330.0" text="NICKNAME" />
+                  <HBox prefHeight="330.0" prefWidth="477.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="471.0" text="RESIGN" />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="468.0" text="1/2" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="23.0" prefWidth="477.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="348.0" text="RESIGN" />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="1/2" />
+                     </children>
+                  </HBox>
+                  <TextField prefHeight="120.0" prefWidth="477.0" text="NICKNAME" />
+                  <TextField prefHeight="115.0" prefWidth="477.0" text="TIMER" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

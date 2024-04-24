@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<VBox fx:id="vbox"  xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chessboard.ChessboardController">
+    <children>
+        <HBox fx:id="hbox">
+            <children>
+                <AnchorPane maxHeight="750.0" maxWidth="1300.0" minHeight="750.0" minWidth="1300.0" prefHeight="750.0" prefWidth="1300.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+
+                    <ImageView fitHeight="750.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@tlos.jpeg" />
+                        </image>
+                    </ImageView>
+
+                    <GridPane fx:id="chessboard" alignment="CENTER" layoutX="341.0" layoutY="66.0" maxHeight="617.0" maxWidth="617.0" minHeight="617.0" minWidth="617.0" prefHeight="617.0" prefWidth="617.0" styleClass="szachownicaGrid">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                            <ColumnConstraints prefWidth="90.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+                            <RowConstraints prefHeight="90.0" />
+
+                        </rowConstraints>
+                    </GridPane>
+                    <Label fx:id="uzytkownik2" alignment="CENTER" layoutX="988.0" layoutY="66.0" prefHeight="131.0" prefWidth="265.0" text="Użytkownik 2">
+                        <font>
+                            <Font name="Cambria" size="36.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="uzytkownik1" alignment="CENTER" layoutX="47.0" layoutY="66.0" prefHeight="131.0" prefWidth="265.0" text="Użytkownik 1">
+                        <font>
+                            <Font name="Cambria" size="36.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="ranking1" alignment="CENTER" layoutX="107.0" layoutY="151.0" prefHeight="59.0" prefWidth="146.0" text="ranking">
+                        <font>
+                            <Font name="Cambria" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="ranking2" alignment="CENTER" layoutX="1048.0" layoutY="151.0" prefHeight="59.0" prefWidth="146.0" text="ranking">
+                        <font>
+                            <Font name="Cambria" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="timer2" alignment="CENTER" layoutX="989.0" layoutY="219.0" prefHeight="131.0" prefWidth="265.0" text=" ">
+                        <font>
+                            <Font name="Cambria" size="36.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="timer1"  alignment="CENTER" layoutX="48.0" layoutY="219.0" prefHeight="131.0" prefWidth="265.0" text=" ">
+                        <font>
+                            <Font name="Cambria" size="36.0" />
+                        </font>
+                    </Label>
+                    <Button layoutX="90.0" layoutY="350.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="180.0" styleClass="DefaultButton" text="PODDAJ SIĘ" onAction="#poddajsieGracz1" />
+                    <Button onAction="#zaproponujRemis"  fx:id="przyciskGracz1" layoutX="90.0" layoutY="404.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="180.0" styleClass="DefaultButton" text="ZAPROPONUJ REMIS" />
+                    <Button onAction="#zaproponujRemis"  fx:id="przyciskGracz2" layoutX="1031.0" layoutY="404.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="180.0" styleClass="DefaultButton" text="ZAPROPONUJ REMIS" />
+                    <Button layoutX="1031.0" layoutY="350.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="180.0" styleClass="DefaultButton" text="PODDAJ SIĘ" onAction="#poddajsieGracz2" />
+                    <Button fx:id="wroc" onAction="#handleWrocButtonClick" layoutX="90.0" layoutY="683.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="180.0" styleClass="DefaultButton" text="WRÓĆ"/>
+
+
+
+                </AnchorPane>
+            </children>
+        </HBox>
+    </children>
+</VBox>
