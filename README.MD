@@ -5,7 +5,7 @@ UI made in polish.
 
 ### How to run
 1. Add jar files from the /lib folder as libraries.
-2. Connect a database. A needed sql file named "szachy.sql" is in the main folder. Class responsible for thr database named "BazaDanych". If you use other tool than MySQL, want to change port etc. take a look at the fields named DB_URL, DB_USER and DB_PASSWORD.
+2. Connect a database. A needed sql file named "szachy.sql" is in the main folder. Class responsible for the database is named "BazaDanych". If you use other tool than MySQL or want to change port etc. take a look at fields named DB_URL, DB_USER and DB_PASSWORD.
 3. Compile a "HelloApplication.java" file. Log in with accounts (left and right panel for each player). You can enter logins and passwords of already created users or register ones yourself. 
 
 ### Additional description
