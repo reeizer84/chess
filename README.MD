@@ -14,6 +14,5 @@ For now, when check happens and a king has no way of rescuing himself it can be 
 ### My part of work
 I created a logic behind the game. Like settting up the board, showing possible movements. Here are the details:  
 1. Majority of the Board.java (except last function named "zwyciezca").
-2. Initiated ChessboardController.java to make it able to control game (only that). Elements of database (name of players, ranking), surrender/draw buttons and timer were appended later by my friends.
-3. Every class for each figure (Rook, Queen, Pawn etc.).
-4. Square class
+2. Every class for each figure (Rook, Queen, Pawn etc.).
+3. Square class
