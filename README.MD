@@ -1,5 +1,5 @@
 # Chess
-A chess game with user login, game history and simple ranking system. Match is played on the same device. At the end of game arduino board will mark it's presence, just make sure you plug one. Created with my friends for a university project. Code written in Java (using JavaFX).  
+A chess game with user login, game history and simple ranking system. Match is played on the same device. At the end of a game arduino board will mark it's presence, just make sure you plug one. Created with my friends for a university project. Code written in Java (using JavaFX).  
 As you can guess not everything here is my work - my part will be descriped below.  
 UI made in polish.
 
